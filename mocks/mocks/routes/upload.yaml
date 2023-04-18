@@ -1,0 +1,10 @@
+- id: "upload-file"
+  url: "/api/upload"
+  method: "POST" # Problem: request information is not logged!
+  variants:
+    - id: "success"
+      type: "json"
+      options:
+        status: 201
+        body:
+          success: true

@@ -1,0 +1,4 @@
+- id: "base" # collection id
+  routes: # collection routes
+    - "upload-file:success"
+    - "download-file:success"

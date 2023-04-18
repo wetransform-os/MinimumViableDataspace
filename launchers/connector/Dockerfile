@@ -29,6 +29,18 @@ ENV WEB_HTTP_IDS_PATH="/api/v1/ids"
 ENV WEB_HTTP_IDENTITY_PORT="7171"
 ENV WEB_HTTP_IDENTITY_PATH="/api/v1/identity"
 
+# XXX From transfer example
+# "data-plane-api"
+# web.http.public.port=19291     # Default seems to be 8185
+# web.http.public.path=/public   # Default seems to be /api/v1/public
+# "control-api-configuration"
+# web.http.control.port=19192    # Default seems to be 9191
+# web.http.control.path=/control # Default seems to be /api/v1/control
+ENV WEB_HTTP_CONTROL_PORT="10101"
+ENV WEB_HTTP_CONTROL_PATH="/api/v1/control"
+
+
+
 # Use "exec" for graceful termination (SIGINT) to reach JVM.
 # ARG can not be used in ENTRYPOINT so storing values in ENV variables
 ENV JVM_ARGS=$JVM_ARGS

@@ -1,0 +1,12 @@
+- id: "download-file"
+  url: "/api/download"
+  method: "GET"
+  variants:
+    - id: "success"
+      type: "file"
+      options:
+        status: 200
+        path: test.txt # path of the file to be transferred
+        options: # options for the express.sendFile method
+          maxAge: 500
+          root: /input/mocks/files

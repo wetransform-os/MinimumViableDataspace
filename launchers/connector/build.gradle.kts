@@ -32,9 +32,22 @@ dependencies {
     implementation(edc.ext.http)
 
     // https://github.com/eclipse-edc/Connector/tree/main/extensions/data-plane
-    //implementation("${edcGroup}:data-plane-api:${edcVersion}")
+    implementation("${edcGroup}:data-plane-api:${edcVersion}")
     implementation("${edcGroup}:data-plane-core:${edcVersion}")
     implementation("${edcGroup}:data-plane-http:${edcVersion}")
+
+    // https://github.com/eclipse-edc/Connector/tree/main/extensions/control-plane/transfer/transfer-pull-http-receiver
+    // 
+    // Requires setting endpoint URL for upload:
+    // https://github.com/eclipse-edc/Connector/blob/7b8e02b693df6bdc595b776f84dfed796973d4bb/extensions/control-plane/transfer/transfer-pull-http-receiver/src/main/java/org/eclipse/edc/connector/receiver/http/HttpEndpointDataReferenceReceiverExtension.java#L33
+    // 
+    // A POST request is sent to that endpoint:
+    // https://github.com/eclipse-edc/Connector/blob/7b8e02b693df6bdc595b776f84dfed796973d4bb/extensions/control-plane/transfer/transfer-pull-http-receiver/src/main/java/org/eclipse/edc/connector/receiver/http/HttpEndpointDataReferenceReceiver.java#L59
+    implementation("${edcGroup}:transfer-pull-http-receiver:${edcVersion}")
+
+    implementation("${edcGroup}:data-plane-selector-api:${edcVersion}")
+    implementation("${edcGroup}:data-plane-selector-core:${edcVersion}")
+    implementation("${edcGroup}:data-plane-selector-client:${edcVersion}")
     
     // IDS
     implementation(edc.ids) {
