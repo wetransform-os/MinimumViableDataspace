@@ -19,6 +19,7 @@ plugins {
 }
 
 val edcGroup: String by project
+val edcVersion: String by project
 
 dependencies {
     implementation(project(":extensions:refresh-catalog"))
@@ -29,6 +30,11 @@ dependencies {
     implementation(edc.api.dataManagement)
     implementation(edc.config.filesystem)
     implementation(edc.ext.http)
+
+    // https://github.com/eclipse-edc/Connector/tree/main/extensions/data-plane
+    //implementation("${edcGroup}:data-plane-api:${edcVersion}")
+    implementation("${edcGroup}:data-plane-core:${edcVersion}")
+    implementation("${edcGroup}:data-plane-http:${edcVersion}")
     
     // IDS
     implementation(edc.ids) {
